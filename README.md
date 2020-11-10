@@ -17,7 +17,7 @@ ember install ember-select-light
 ```handlebars
 <SelectLight
   @value="turtle"
-  @options=(array "turtle" "tortoise")
+  @options={{array "turtle" "tortoise"}}
   @change={{action "handleChange"}} />
 ```
 
@@ -25,20 +25,20 @@ ember install ember-select-light
 
 ```handlebars
 <SelectLight
-  @options=(array
+  @options={{array
     (hash value="shortfin" label="Shortfin Shark")
     (hash value="mako" label="Mako Shark")
-  ) />
+  }} />
 ```
 
 `value` and `label` will be the default object keys used unless `@valueKey="...` and/or `@displayKey="...` are used respectively, like so...
 
 ```handlebars
 <SelectLight
-  @options=(array
+  @options={{array
     (hash myValue="shortfin" myLabel="Shortfin Shark")
     (hash myValue="mako" myLabel="Mako Shark")
-  )
+  }}
   @valueKey="myValue"
   @displayKey="myLabel" />
 ```
@@ -47,8 +47,8 @@ ember install ember-select-light
 
 ```handlebars
 <SelectLight>
-	<option value="clown">Clown Fish</option>
-	<option value="cat">Cat Fish</option>
+  <option value="clown">Clown Fish</option>
+  <option value="cat">Cat Fish</option>
 </SelectLight>
 ```
 
@@ -59,6 +59,12 @@ Other arguments are spread onto the `<select ...attributes` as you'd expect, all
 ```handlebars
 <SelectLight class="my-select" disabled="true" />
 ```
+
+#### Styled
+
+As shown above we can pass in other arguments like `class="` which allows us to style our Select dropdowns. Below is an example with the Select dropdown styled using [Tailwind CSS](https://tailwindcss.com/).
+
+[![Following the Tailwind Custom Select guides this component can be easily styled](./tailwind-styled.gif)](https://tailwindcss.com/components/forms#custom-select)
 
 ---
 
