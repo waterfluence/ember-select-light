@@ -161,6 +161,28 @@ module('Integration | Component | select-light', function(hooks) {
 		assert.dom('select option').includesText(options[0].description);
 	});
 
+	test('should render options correctly when value is an empty string', async function(assert) {
+		let options = [
+			{ value: '', label: 'None' },
+			{ value: 'mako', label: 'Mako Shark' },
+		];
+		let value = options[1].value;
+		this.setProperties({
+			options,
+			value,
+		});
+
+		await render(hbs`
+      <SelectLight
+        @options={{this.options}}
+				@value={{this.value}} />`);
+
+    assert.dom('select option').exists({ count: options.length });
+		assert.dom('select option').hasAttribute('value', options[0].value);
+		assert.dom('select option').includesText(options[0].label);
+		assert.dom('select').hasValue(value);
+	});
+
 	test('should fire change when user chooses option, mut with yield', async function(assert) {
 		this.set('myValue', null);
 
