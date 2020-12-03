@@ -1,5 +1,8 @@
 # ember-select-light Changelog
 
+### v2.0.4 (December 3, 2020)
+- [#26](https://github.com/ember-a11y/ember-select-light/pull/26) [BUGFIX] Fixes use case where passed in options objects have an empty string as the value or label (thanks javve!)
+
 ### v2.0.3 (November 9, 2020)
 - [#27](https://github.com/ember-a11y/ember-select-light/pull/27) [DOCS] Corrected code examples in README, added a tailwind styled example
 
